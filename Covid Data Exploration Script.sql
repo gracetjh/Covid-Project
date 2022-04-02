@@ -109,9 +109,7 @@ select *, (rolling_vaccinations/population)*100
 from percent_population_vaccinated
 
 -- Create view to store data for later visualization
-
 create view view_percent_population_vaccinated as
-
 select d.continent, d.location, d.date, d.population, v.new_vaccinations,
 sum(v.new_vaccinations) over (partition by d.location order by d.location,d.date) as rolling_vaccinations
 from CovidDeaths as d
