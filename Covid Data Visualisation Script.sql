@@ -32,14 +32,6 @@ order by infection_rate desc
 
 
 
----- Visualisation 4:Date when Asia country has highest infection
---select location, population, date, max(total_cases) as highest_infection_count, max(total_cases/population)*100 as infection_rate
---from coviddeaths
---where population is not null and continent ='Asia'
---group by location, population, date
---order by location, date desc, infection_rate desc
-
-
 -- Visualisation 4:Daily infection rate in Singapore
 select location, population, date, new_cases, (new_cases/population)*100 as daily_infection_rate
 from coviddeaths
